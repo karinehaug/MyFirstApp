@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Min første app</string>
-    <string name="edit_message">Skriv en melding</string>
+    <string name="edit_message_hint">Skriv en melding</string>
     <string name="button_send">Send</string>
 </resources>
