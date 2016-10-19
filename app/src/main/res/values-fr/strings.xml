@@ -3,4 +3,5 @@
     <string name="app_name">Ma première application</string>
     <string name="edit_message_hint">Entrer un message</string>
     <string name="button_send">Envoyer</string>
+    <string name="edit_message_hint_large" />
 </resources>
