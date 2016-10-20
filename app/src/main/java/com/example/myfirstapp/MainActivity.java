@@ -36,12 +36,16 @@ public class MainActivity extends AppCompatActivity {
 
         if (pauseCounter > 0) {
             TextView textView = (TextView) findViewById(R.id.edit_message);
-            textView.setText("Paused " + pauseCounter + " times: ");
+            textView.setText(text(R.string.Paused) + " " + pauseCounter + " " + text(R.string.times) + ": ");
         }
     }
 
+    private String text(int id) {
+        return getResources().getString(id);
+    }
+
     private void addOldVersionWarning() {
-        String warning = getResources().getString(R.string.warning_version);
+        String warning = text(R.string.warning_version);
         TextView textView = new TextView(this);
         textView.setText(warning);
         textView.setLayoutParams(new LinearLayoutCompat.LayoutParams(
