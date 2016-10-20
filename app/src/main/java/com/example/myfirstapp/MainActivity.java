@@ -11,6 +11,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
+    private int pauseCounter;
     public final static String EXTRA_MESSAGE = "com.example.myfirstapp.MESSAGE";
 
     @Override
@@ -20,6 +21,22 @@ public class MainActivity extends AppCompatActivity {
 
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) {
             addOldVersionWarning();
+        }
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        pauseCounter++;
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        if (pauseCounter > 0) {
+            TextView textView = (TextView) findViewById(R.id.edit_message);
+            textView.setText("Paused " + pauseCounter + " times: ");
         }
     }
 
