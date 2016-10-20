@@ -4,4 +4,5 @@
     <string name="edit_message_hint">Entrer un message</string>
     <string name="button_send">Envoyer</string>
     <string name="edit_message_hint_large" />
+    <string name="warning_version" />
 </resources>

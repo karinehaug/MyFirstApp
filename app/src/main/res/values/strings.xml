@@ -3,4 +3,5 @@
     <string name="edit_message_hint">Enter a message</string>
     <string name="button_send">Send</string>
     <string name="edit_message_hint_large">Hello TV! Enter a message</string>
+    <string name="warning_version">You are using an old version of Android</string>
 </resources>
