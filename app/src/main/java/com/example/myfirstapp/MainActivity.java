@@ -12,11 +12,16 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
     private int pauseCounter;
+    private final static String PAUSE_COUNTER = "pauseCounter";
     public final static String EXTRA_MESSAGE = "com.example.myfirstapp.MESSAGE";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        if (savedInstanceState != null) {
+            pauseCounter = savedInstanceState.getInt(PAUSE_COUNTER);
+        }
         setContentView(R.layout.activity_main);
 
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) {
@@ -38,6 +43,12 @@ public class MainActivity extends AppCompatActivity {
             TextView textView = (TextView) findViewById(R.id.edit_message);
             textView.setText(text(R.string.Paused) + " " + pauseCounter + " " + text(R.string.times) + ": ");
         }
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putInt(PAUSE_COUNTER, pauseCounter);
     }
 
     private String text(int id) {
